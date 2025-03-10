@@ -57,7 +57,6 @@ namespace Hangfire.MySql
         private string GetAggregationQuery()
         {
             return $@"
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 START TRANSACTION;
 
 INSERT INTO `{_storageOptions.TablesPrefix}AggregatedCounter` (`Key`, Value, ExpireAt)
